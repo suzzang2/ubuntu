@@ -63,6 +63,7 @@ void run_automated_warehouse(char **argv)
         int idxs[num + 1]; // 인덱스 배열 생성
         threads[0] = thread_create("CNT", 0, &test_cnt, NULL); // 중앙 제어 노드 스레드
         for (int i = 0; i < num; i++) {
+                printf("iterate %d\n", i);
             char name[4]; // 로봇 이름을 저장할 배열
             snprintf(name, sizeof(name), "R%d", i + 1); // 로봇 이름 생성
             idxs[i] = i; // 인덱스 배열 초기화
