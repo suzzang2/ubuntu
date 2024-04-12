@@ -39,19 +39,19 @@ void run_automated_warehouse(char **argv)
         printf("implement automated warehouse!\n");
 
         // test case robots
-        robots = malloc(sizeof(struct robot) * 4);
-        setRobot(&robots[0], "R1", 5, 5, 0, 0);
-        setRobot(&robots[1], "R2", 0, 2, 0, 0);
-        setRobot(&robots[2], "R3", 1, 1, 1, 1);
-        setRobot(&robots[3], "R4", 5, 5, 0, 0);
+        robots = malloc(sizeof(struct robot) * 1);
+        setRobot(&robots[0], "R1", 5, 5, 0, 0); //초기에는 무조건 W에 위치해야 함
+        // setRobot(&robots[1], "R2", 0, 2, 0, 0);
+        // setRobot(&robots[2], "R3", 1, 1, 1, 1);
+        // setRobot(&robots[3], "R4", 5, 5, 0, 0);
 
         // example of create thread
-        tid_t* threads = malloc(sizeof(tid_t) * 4);
-        int idxs[4] = {1, 2, 3, 4};
+        tid_t* threads = malloc(sizeof(tid_t) * 1);
+        int idxs[1] = {1};
         threads[0] = thread_create("CNT", 0, &test_cnt, NULL);
-        threads[1] = thread_create("R1", 0, &test_thread, &idxs[1]);
-        threads[2] = thread_create("R2", 0, &test_thread, &idxs[2]);
-        threads[3] = thread_create("R3", 0, &test_thread, &idxs[3]);
+        // threads[1] = thread_create("R1", 0, &test_thread, &idxs[1]);
+        // threads[2] = thread_create("R2", 0, &test_thread, &idxs[2]);
+        // threads[3] = thread_create("R3", 0, &test_thread, &idxs[3]);
 
         // if you want, you can use main thread as a central control node
         

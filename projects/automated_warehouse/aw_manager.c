@@ -12,6 +12,7 @@ const char thread_status[4][10] = {
     "DYING"
 };
 
+//고정, 6x7 사이즈임
 const char map_draw_default[6][7] = {
     {'X', 'X', 'A', 'X', 'X', 'X', 'X' },
     {'X', '1', ' ', '2', '3', '4', 'X' },
