@@ -47,7 +47,7 @@ void run_automated_warehouse(char **argv)
 
         // example of create thread
         tid_t* threads = malloc(sizeof(tid_t) * 2);
-        int idxs[1] = {0};
+        int idxs[2] = {0};
         threads[0] = thread_create("CNT", 0, &test_cnt, NULL); //중앙제어노드
         threads[1] = thread_create("R1", 0, &test_thread, &idxs[0]);
         // threads[2] = thread_create("R2", 0, &test_thread, &idxs[2]);
