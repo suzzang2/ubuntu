@@ -60,7 +60,7 @@ void run_automated_warehouse(char **argv)
         // // threads[3] = thread_create("R3", 0, &test_thread, &idxs[3]);
         // example of create thread
         tid_t* threads = malloc(sizeof(tid_t) * (num + 1));
-        int idxs[num + 1]; // 인덱스 배열 생성
+        int idxs[num]; // 인덱스 배열 생성
         threads[0] = thread_create("CNT", 0, &test_cnt, NULL); // 중앙 제어 노드 스레드
         for (int i = 0; i < num; i++) {
                 printf("iterate %d\n", i);
