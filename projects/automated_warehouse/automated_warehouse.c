@@ -46,10 +46,10 @@ void run_automated_warehouse(char **argv)
         // setRobot(&robots[3], "R4", 5, 5, 0, 0);
 
         // example of create thread
-        tid_t* threads = malloc(sizeof(tid_t) * 1);
-        int idxs[1] = {1};
+        tid_t* threads = malloc(sizeof(tid_t) * 2);
+        int idxs[2] = {0, 1};
         threads[0] = thread_create("CNT", 0, &test_cnt, NULL);
-        // threads[1] = thread_create("R1", 0, &test_thread, &idxs[1]);
+        threads[1] = thread_create("R1", 0, &test_thread, &idxs[1]);
         // threads[2] = thread_create("R2", 0, &test_thread, &idxs[2]);
         // threads[3] = thread_create("R3", 0, &test_thread, &idxs[3]);
 
