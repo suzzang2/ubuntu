@@ -47,7 +47,7 @@ void run_automated_warehouse(char **argv)
         // // setRobot(&robots[3], "R4", 5, 5, 0, 0);
         for (int i = 0; i < num; i++) {
                 char name[4]; // 로봇 이름을 저장할 배열
-                sprintf(name, "R%d", i + 1); // 로봇 이름 생성
+                snprintf(name, sizeof(name), "R%d", i + 1); // 로봇 이름 생성
                 setRobot(&robots[i], name, 5, 5, 0, 0); // 로봇 설정->모두 W에 배치
         }
 
@@ -64,7 +64,7 @@ void run_automated_warehouse(char **argv)
         threads[0] = thread_create("CNT", 0, &test_cnt, NULL); // 중앙 제어 노드 스레드
         for (int i = 0; i < num; i++) {
             char name[4]; // 로봇 이름을 저장할 배열
-            sprintf(name, "R%d", i + 1); // 로봇 이름 생성
+            snprintf(name, sizeof(name), "R%d", i + 1); // 로봇 이름 생성
             idxs[i] = i; // 인덱스 배열 초기화
             threads[i + 1] = thread_create(name, 0, &test_thread, &idxs[i]); // 로봇 스레드
         }
